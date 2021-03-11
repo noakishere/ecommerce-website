@@ -1,28 +1,27 @@
 ﻿<%@ Page Title="Menu" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="Bulma_Restaurant.Menu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .auto-style2 {
+            position: fixed;
+            left: 13px;
+            top: 81px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="row align-items-center">
-        <div class="col-sm">
-          One of three columns
-        </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-      </div>
-      <div class="row align-items-center">
-        <div class="col-sm">
-          One of three columns
-        </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-        <div class="col-sm">
-          One of three columns
-        </div>
-      </div>
+    <div class="auto-style2">
+        <asp:Panel ID="Panel2" runat="server" Height="51px">
+            <h2 style="border-bottom: 1px solid black">Your Cart:</h2>
+             <br />
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label> <br /> <br />
+            <asp:Button ID="cartButton" runat="server" CssClass="btn btn-primary" Text="Go to Checkout" OnClick="cartButton_Click"/>
+        </asp:Panel>
+    </div>
+    <asp:Panel ID="Panel1" runat="server" Height="51px">
+        
+    </asp:Panel>
+    
+    
+
 </asp:Content>
