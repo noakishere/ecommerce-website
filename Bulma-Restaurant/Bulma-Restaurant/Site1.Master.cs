@@ -11,6 +11,7 @@ namespace Bulma_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             HttpCookie cookie = Request.Cookies["UserDetails"];
             if(cookie != null)
             {
