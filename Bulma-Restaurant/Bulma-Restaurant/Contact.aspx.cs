@@ -11,7 +11,11 @@ namespace Bulma_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie cookie = Request.Cookies["UserDetails"];
+            if (cookie != null)
+            {
+                nameTextBox.Text = cookie["Fname"];
+            }
         }
 
         protected void SendButton_Click(object sender, EventArgs e)

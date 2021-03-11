@@ -42,6 +42,12 @@ namespace Bulma_Restaurant
             {
                 priceLabel.Text = "$0.00";
             }
+
+            HttpCookie cookie = Request.Cookies["UserDetails"];
+            if (cookie != null)
+            {
+                nameTextBox.Text = cookie["Fname"];
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
