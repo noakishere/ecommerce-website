@@ -72,6 +72,7 @@
     <Content Include="App_Data\BulmaDB_log.ldf">
       <DependentUpon>BulmaDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Images\Meals\sushi01.jpg" />
     <Content Include="Images\thumbnail03.jpg" />
@@ -88,6 +89,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BulmaDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

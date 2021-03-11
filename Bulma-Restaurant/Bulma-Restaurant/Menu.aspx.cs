@@ -14,7 +14,7 @@ namespace Bulma_Restaurant
         {
             if (!IsPostBack)
             {
-                if (Session["val"] != null && Session["val"].ToString() != "")
+                if (Session["val"] != null && Session["val"].ToString() != "" && Label1.Text != "")
                 {
                     Label1.Text = Session["val"].ToString();
                 }
@@ -110,7 +110,8 @@ namespace Bulma_Restaurant
 
         protected void cartButton_Click(object sender, EventArgs e)
         {
-
+            Session["val"] = Label1.Text;
+            Server.Transfer("Cart.aspx");
         }
     }
 }

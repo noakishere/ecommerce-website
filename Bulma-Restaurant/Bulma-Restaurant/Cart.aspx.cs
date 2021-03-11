@@ -11,6 +11,19 @@ namespace Bulma_Restaurant
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["val"] != null)
+            {
+                answer.Text = Session["val"].ToString();
+                Session.Remove("val");
+            }
+            else
+            {
+                answer.Text = "Your cart is empty!";
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
