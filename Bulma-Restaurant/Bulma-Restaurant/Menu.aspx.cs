@@ -10,11 +10,13 @@ namespace Bulma_Restaurant
 {
     public partial class Menu : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                if (Session["val"] != null && Session["val"].ToString() != "" && Label1.Text != "")
+                if (Session["val"] != null
+                    && Session["val"].ToString() != "")
                 {
                     Label1.Text = Session["val"].ToString();
                 }
@@ -22,6 +24,11 @@ namespace Bulma_Restaurant
                 else
                 {
                     Label1.Text = Request.QueryString["id"];
+                }
+
+                if (Session["price"] != null)
+                {
+                    Label2.Text = Session["price"].ToString();
                 }
             }
 
@@ -51,6 +58,10 @@ namespace Bulma_Restaurant
 
                 Label1.Text += newOrder;
 
+                double price = Double.Parse(Label2.Text);
+                price += Double.Parse(c1.price);
+
+                Label2.Text = price.ToString();
             }
         }
 
@@ -111,6 +122,7 @@ namespace Bulma_Restaurant
         protected void cartButton_Click(object sender, EventArgs e)
         {
             Session["val"] = Label1.Text;
+            Session["price"] = Label2.Text;
             Server.Transfer("Cart.aspx");
         }
     }
